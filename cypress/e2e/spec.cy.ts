@@ -370,65 +370,65 @@ describe('Sprint 4', () => {
         //         });
         // }
 
-        function generalBlockCreatingTrainings() {
-            // TODO нужен скриншот
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateTraining}]`)
-                .should('be.exist')
-                .contains('Создать тренировку')
-                .click();
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateExercise}]`)
-                .should('be.exist')
-                .contains('Добавить упражнения')
-                .should('be.disabled');
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalExerciseTrainingButtonClose}]`).click();
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateTraining}]`)
-                .should('be.exist')
-                .contains('Создать тренировку')
-                .click();
-            selectDropdown(`[data-test-id=${DATA_TEST_ID.modalCreateExerciseSelect}]`, 'Спина');
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateExercise}]`)
-                .contains('Добавить упражнения')
-                .click();
-            // TODO нужен скриншот
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).should('be.visible');
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightButtonClose}]`).click();
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateExercise}]`).within(() => {
-                cy.contains('Сохранить').should('be.disabled');
-                cy.contains('Добавить упражнения').click();
-            });
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
-                cy.contains('Добавление упражнений').should('exist');
-                cy.contains(`${getFormatDate(dayAfterTomorrow, false)}`).should('exist');
-                cy.contains('Спина').should('exist');
-            });
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputExercise}${0}]`).type(
-                'Становая тяга',
-            );
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputApproach}${0}]`)
-                .clear()
-                .type('3');
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputWeight}${0}]`)
-                .clear()
-                .type('50');
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputQuantity}${0}]`)
-                .clear()
-                .type('10');
-            cy.contains('Добавить ещё').click();
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputExercise}${1}]`).type(
-                'Сведение лопаток',
-            );
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputApproach}${1}]`)
-                .clear()
-                .type('3');
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputWeight}${1}]`)
-                .clear()
-                .type('50');
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputQuantity}${1}]`)
-                .clear()
-                .type('10');
-            // TODO нужен скриншот
-            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightButtonClose}]`).click();
-        }
+        // function generalBlockCreatingTrainings() {
+        //     // TODO нужен скриншот
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateTraining}]`)
+        //         .should('be.exist')
+        //         .contains('Создать тренировку')
+        //         .click();
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateExercise}]`)
+        //         .should('be.exist')
+        //         .contains('Добавить упражнения')
+        //         .should('be.disabled');
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalExerciseTrainingButtonClose}]`).click();
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateTraining}]`)
+        //         .should('be.exist')
+        //         .contains('Создать тренировку')
+        //         .click();
+        //     selectDropdown(`[data-test-id=${DATA_TEST_ID.modalCreateExerciseSelect}]`, 'Спина');
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateExercise}]`)
+        //         .contains('Добавить упражнения')
+        //         .click();
+        //     // TODO нужен скриншот
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).should('be.visible');
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightButtonClose}]`).click();
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalCreateExercise}]`).within(() => {
+        //         cy.contains('Сохранить').should('be.disabled');
+        //         cy.contains('Добавить упражнения').click();
+        //     });
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
+        //         cy.contains('Добавление упражнений').should('exist');
+        //         cy.contains(`${getFormatDate(dayAfterTomorrow, false)}`).should('exist');
+        //         cy.contains('Спина').should('exist');
+        //     });
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputExercise}${0}]`).type(
+        //         'Становая тяга',
+        //     );
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputApproach}${0}]`)
+        //         .clear()
+        //         .type('3');
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputWeight}${0}]`)
+        //         .clear()
+        //         .type('50');
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputQuantity}${0}]`)
+        //         .clear()
+        //         .type('10');
+        //     cy.contains('Добавить ещё').click();
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputExercise}${1}]`).type(
+        //         'Сведение лопаток',
+        //     );
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputApproach}${1}]`)
+        //         .clear()
+        //         .type('3');
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputWeight}${1}]`)
+        //         .clear()
+        //         .type('50');
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightInputQuantity}${1}]`)
+        //         .clear()
+        //         .type('10');
+        //     // TODO нужен скриншот
+        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightButtonClose}]`).click();
+        // }
 
         function generalBlockUpdatingTrainings(data: number, screenshotName?: string) {
             cy.get(`[data-test-id=${DATA_TEST_ID.modalUpdateTrainingEditButton}${0}]`)
