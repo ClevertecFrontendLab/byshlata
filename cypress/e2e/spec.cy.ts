@@ -341,18 +341,18 @@ describe('Sprint 4', () => {
             }
         }
 
-        function selectDropdown(testId: string, optionText: string) {
-            cy.get(testId).click();
+        // function selectDropdown(testId: string, optionText: string) {
+        //     cy.get(testId).click();
 
-            return cy
-                .get('.ant-select-dropdown :not(.ant-select-dropdown-hidden)')
-                .find('.ant-select-item-option')
-                .each((el) => {
-                    if (el.text() === optionText) {
-                        cy.wrap(el).click();
-                    }
-                });
-        }
+        //     return cy
+        //         .get('.ant-select-dropdown :not(.ant-select-dropdown-hidden)')
+        //         .find('.ant-select-item-option')
+        //         .each((el) => {
+        //             if (el.text() === optionText) {
+        //                 cy.wrap(el).click();
+        //             }
+        //         });
+        // }
 
         // function limitedSelectDropdown(testId: string) {
         //     cy.get(testId).click();
