@@ -8,11 +8,6 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
     plugins: [react(), svgr()],
     base: '/byshlata/',
-    build: {
-    sourcemap: true,
-    tsc: {
-      ignoreDiagnostics: [2322],
-    },
     css: {
         preprocessorOptions: {
             less: {
