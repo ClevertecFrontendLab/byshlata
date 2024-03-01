@@ -237,7 +237,7 @@ const postUserTraining = {
     date: dayAfterTomorrow,
 };
 
-function returnUpdateUserTraining(id, date, isImplementation: boolean) {
+function returnUpdateUserTraining(id: any, date: any, isImplementation: boolean) {
     return {
         isImplementation,
         id,
@@ -287,7 +287,7 @@ const newUserTraining = {
     ],
 };
 
-function getFormatDate(date, isStandardFormat) {
+function getFormatDate(date: any, isStandardFormat: any) {
     const formattedDate = new Date(date);
     const year = formattedDate.getFullYear();
     const month = String(formattedDate.getMonth() + 1).padStart(2, '0');
@@ -306,7 +306,7 @@ const trainingList = [
 
 const trainingArray = ['Ноги', 'Руки', 'Силовая', 'Спина', 'Грудь'];
 
-function reduceItem(arr1, arr2, data) {
+function reduceItem(arr1: any, arr2: any, data: any) {
     return arr2.filter(
         (training) =>
             !arr1.some(
@@ -329,7 +329,7 @@ describe('Sprint 4', () => {
         const resolutionTablet = [{ width: 833, height: 900 }];
         const resolutionLaptop = [{ width: 1440, height: 900 }];
 
-        function takeScreenshots(screenshotName, resolution = resolutionFull) {
+        function takeScreenshots(screenshotName: any, resolution = resolutionFull) {
             cy.wait(1000);
             for (let i = 0; i < resolution.length; i++) {
                 cy.viewport(resolution[i].width, resolution[i].height);
