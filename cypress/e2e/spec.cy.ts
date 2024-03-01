@@ -1,3 +1,4 @@
+// @ts-ignore
 /* eslint-disable no-underscore-dangle */
 /// <reference types="cypress" />
 
