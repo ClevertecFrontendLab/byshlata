@@ -308,9 +308,9 @@ const trainingArray = ['Ноги', 'Руки', 'Силовая', 'Спина', '
 
 function reduceItem(arr1: any, arr2: any, data: any) {
     return arr2.filter(
-        (training) =>
+        (training as any) =>
             !arr1.some(
-                (userTrainingItem) =>
+                (userTrainingItem as any) =>
                     userTrainingItem.date === data && userTrainingItem.name === training,
             ),
     );
