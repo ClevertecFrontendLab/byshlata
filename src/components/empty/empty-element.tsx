@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-nocheck
 import Empty from 'antd/es/empty/empty';
 
 import styles from './empty-element.module.css';
