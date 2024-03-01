@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "CI=false tsc && vite build",
     "preview": "vite preview",
     "lint:css": "stylelint ./src/**/*.css",
     "lint:scripts": "eslint ./ ./src/ --ext .js,.jsx,.ts,.tsx",
