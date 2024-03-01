@@ -308,8 +308,10 @@ const trainingArray = ['Ноги', 'Руки', 'Силовая', 'Спина', '
 
 function reduceItem(arr1: any, arr2: any, data: any) {
     return arr2.filter(
+        // @ts-ignore
         (training as any) =>
             !arr1.some(
+                // @ts-ignore
                 (userTrainingItem as any) =>
                     userTrainingItem.date === data && userTrainingItem.name === training,
             ),
